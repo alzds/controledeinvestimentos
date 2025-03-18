@@ -18,11 +18,4 @@ public class InvestmentDTO {
     private double amount;
     private Date date;
 
-    public InvestmentDTO(String name, String type, double amount) {
-        this.name = name;
-        this.type = type;
-        this.amount = amount;
-        this.date = new Date();
-    }
-
 }
