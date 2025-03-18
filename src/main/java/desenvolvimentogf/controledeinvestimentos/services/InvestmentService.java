@@ -39,6 +39,15 @@ public class InvestmentService {
     }
 
     public InvestmentDTO update(int id, InvestmentDTO investmentDTO) {
+        if (investmentDTO.getAmount() <= 0) {
+            throw new IllegalArgumentException("O valor investido deve ser maior que 0.");
+        }
+
+        if (investmentDTO.getDate()
+                .after(Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant()))) {
+            throw new IllegalArgumentException("A data do investimento não pode estar no futuro.");
+        }
+        
         return investments.set(id, investmentDTO);
     }
 
