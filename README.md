@@ -12,7 +12,7 @@ Este projeto é um sistema de cadastro de investimentos desenvolvido em Java 21,
 
 body:
 {
-  "name":"Investimento x",
+  "name":"Fundo X",
   "type":"Ação",
   "amount":100,
   "date":"2025-03-19T00:26:14.786+00:00"
@@ -30,7 +30,7 @@ url:http://localhost:8080/investments/{id}
 
 body:
 {
-  "name":"Investimento y",
+  "name":"Fundo X",
   "type":"Ação",
   "amount":100,
   "date":"2025-03-19T00:26:14.786+00:00"
