@@ -12,7 +12,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class InvestmentDTO {
-    // private int id;
+    private int id;
     private String name;
     private String type;
     private double amount;

@@ -13,6 +13,7 @@ import desenvolvimentogf.controledeinvestimentos.dto.InvestmentDTO;
 @Service
 public class InvestmentService {
     private final List<InvestmentDTO> investments = new ArrayList<>();
+    private int currentId = 0; 
 
     public InvestmentDTO create(InvestmentDTO investmentDTO) {
         if (investmentDTO.getAmount() <= 0) {
@@ -25,6 +26,7 @@ public class InvestmentService {
         }
 
         InvestmentDTO newInvestment = new InvestmentDTO(
+            currentId++,
             investmentDTO.getName(),
             investmentDTO.getType(),
             investmentDTO.getAmount(),
@@ -47,7 +49,7 @@ public class InvestmentService {
                 .after(Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant()))) {
             throw new IllegalArgumentException("A data do investimento não pode estar no futuro.");
         }
-        
+        investmentDTO.setId(id);
         return investments.set(id, investmentDTO);
     }
 
